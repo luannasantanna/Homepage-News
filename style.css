@@ -1,0 +1,424 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+  --laranja: #e9ab53;
+  --vermelho: #f15e50;
+  --branco-gelo: #fffdfa;
+  --cinza-claro: #c5c6ce;
+  --cinza-medio: #5d5f79;
+  --azul-escuro: #00001a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 100%;
+  font-weight: 700;
+  color: var(--azul-escuro);
+  margin-top: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 140%;
+  font-weight: 700;
+  color: var(--laranja);
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 160%;
+  font-weight: 700;
+  color: var(--branco-gelo);
+}
+
+h4, a {
+  font-size: 1.125rem;
+  line-height: 140%;
+  font-weight: 400;
+  color: var(--azul-escuro);
+  text-decoration: none;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 160%;
+  font-weight: 400;
+  color: var(--cinza-medio);
+  margin-top: .5rem;
+}
+
+span {
+  font-size: .875rem;
+  line-height: 160%;
+  font-weight: 400;
+  color: var(--cinza-medio);
+}
+
+button {
+  font-size: 1.15rem;
+  line-height: 160%;
+  font-weight: 700;
+  letter-spacing: .5rem;
+  text-transform: uppercase;
+
+  padding: 1rem 2rem;
+  color: var(--branco-gelo);
+  background-color: var(--vermelho);
+  border: none;
+  margin-top: 2rem;
+}
+
+body {
+  font-family: 'Inter';
+  background: var(--branco-gelo);
+
+  width: 100%;
+  height: 100vh;
+  padding: 1.5rem;
+}
+
+header {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.navbar-mobile {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  max-width: 3rem;
+  max-height: 1.75rem;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.menu {
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  cursor: pointer;
+  z-index: 800;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 40%;
+      left: 16%;
+
+      width: 70%;
+      height: 2px;
+      background-color: var(--azul-escuro);
+
+      transition: .7s ease;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 60%;
+      left: 16%;
+
+      width: 70%;
+      height: 2px;
+      background-color: var(--azul-escuro);
+
+      transition: .7s ease;
+    }
+}
+
+.ativo-menu {
+  width: 2rem;
+  height: 2rem;
+
+  position: relative;
+  cursor: pointer;
+  z-index: 800;
+
+  transition: .7s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 16%;
+
+      width: 70%;
+      height: 2px;
+      background-color: var(--azul-escuro);
+
+      transform: rotate(-135deg);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 16%;
+
+      width: 70%;
+      height: 2px;
+      background-color: var(--azul-escuro);
+
+      transform: rotate(-405deg);
+    }
+}
+
+.menu-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 25, 0.50);
+  transition: .3s ease;
+}
+
+.ativo__menu-mobile {
+  display: inline-block;
+  pointer-events: all;
+}
+
+.nav-list-mobile {
+  width: 70%;
+  height: 100%;
+  padding: 8.75rem 2rem;
+
+  position: absolute;
+  left: 30%;
+  background: var(--branco-gelo);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+
+  list-style: none;
+}
+
+.menu-link {
+  padding: .5rem;
+  position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 80%;
+      left: 0;
+      width: 0;
+      height: 2px;
+
+      background-color: var(--laranja);
+      transition: .5s ease;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+}
+
+.navbar-desktop {
+  display: none;
+}
+
+.banner-img {
+  background-image: url(./images/image-web-3-mobile.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 286px;
+}
+
+.new {
+  background: var(--azul-escuro);
+  margin-top: 3rem;
+  padding: 1.5rem;
+}
+
+.new ul {
+  list-style: none;
+}
+
+.new-post {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--cinza-medio);
+}
+
+.new-post:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.post {
+  margin: 1.5rem 0;
+}
+
+.post li {
+  list-style: none;
+  margin-top: 1.5rem;
+
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  
+}
+
+.post-img {
+  max-width: 122px;
+  height: 162px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.post1 {
+  background-image: url(./images/image-retro-pcs.jpg);
+  width: 100%;
+}
+
+.post2 {
+  background-image: url(./images/image-top-laptops.jpg);
+  width: 100%;
+}
+
+.post3 {
+  background-image: url(./images/image-gaming-growth.jpg);
+  width: 100%;
+}
+
+.post-conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: .5rem;
+}
+
+.post h4 {
+  font-weight: 700;
+}
+
+
+@media (min-width: 768px) {
+  .banner-img {
+    background-image: url(./images/image-web-3-desktop.jpg);
+    height: 310px;
+  }
+}
+
+@media (min-width: 1440px) {
+
+    .navbar-mobile, .ativo__menu-mobile {
+      display: none;
+    }
+
+    body {
+      padding: 4rem 7rem;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-top: 2rem;
+    }
+
+    p {
+      margin-top: 1rem;
+    }
+
+    .navbar-desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu-desktop {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .menu-desktop li:last-child a {
+      padding-right: 0;
+    }
+
+    .logo {
+      max-width: 4rem;
+      max-height: 2.38rem;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto;
+      column-gap: 2rem;
+    }
+
+    .banner {
+      grid-column: 1/9;
+
+      display: grid;
+      grid-template-columns: auto calc(50% - 1rem);
+      grid-template-areas: 
+          'imagem imagem'
+          'titulo botao';
+    }
+
+    .banner-img {
+      height: 329px;
+      grid-area: imagem;
+    }
+
+    .banner p {
+      margin-top: 2rem;
+    }
+
+    .new {
+      margin-top: 0;
+      grid-column: 9/13;
+    }
+
+    .new-post:last-child {
+      padding-bottom: 1.5rem;
+    }
+
+    .post {
+      grid-column: 1/13;
+    }
+
+    .post nav {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 2rem;
+      grid-template-areas: 
+          'item1 item2 item3';
+    }
+
+    .post-conteudo {
+      gap: 1rem;
+    }
+
+    span {
+      font-size: 1rem;
+    }
+
+}
+
+
+
